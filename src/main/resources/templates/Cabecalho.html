@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+
+<nav class="navbar navbar-inverse navbar-static-top">
+	<div class="conatainer-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" style="margin-bottom:7px; margin-left: none;" href="#"> <img th:src="@{/images/FileReader.png}" />
+			</a>
+		</div>
+	</div>
+</nav>
+
+<ul class="nav nav-pills">
+	<li role="presentation" class="active"><a th:href="@{/arquivos}">Arquivos</a></li>
+	<li role="presentation" class="active"><a th:href="@{/fazendas}">Fazendas</a></li>
+	<li role="presentation" class="active"><a th:href="@{/arquivos/processar}">Processar Arquivos</a></li>
+</ul>
+
+</html>

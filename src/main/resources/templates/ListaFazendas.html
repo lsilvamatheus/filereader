@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="LayoutPadrao">
+<head>
+<title>Lista de Fazendas</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<section layout:fragment="conteudo">
+	<div style="margin-left: 15px;">
+		<h3>Lista de Fazendas</h3>
+	</div>
+	<div class="panel panel-default">
+		<div class="table-responsive">
+			<table class="table table-striped header-fixed">
+				<thead>
+					<tr>
+						<th class="text-center">Chave</th>
+						<th class="text-center">CAR</th>
+						<th class="text-center">Fazenda</th>
+						<th class="text-center">Município</th>
+						<th class="text-center">Área(ha)</th>
+						<th class="text-center">Anexo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="fazendas : ${listaFazendas}">
+						<td class="text-center" th:text="${fazendas.chave}"></td>
+						<td class="text-center" th:text="${fazendas.car}"></td>
+						<td class="text-center" th:text="${fazendas.fazenda}"></td>
+						<td class="text-center" th:text="${fazendas.municipio}"></td>
+						<td class="text-center" th:text="${fazendas.area}"></td>
+						<td class="text-center" th:text="${fazendas.anexo}"></td>
+					</tr>
+					<tr>
+						<td colspan="6" th:if="${#lists.isEmpty(listaFazendas)}">Nenhuma
+							Fazenda encontrada</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</section>
+</html>

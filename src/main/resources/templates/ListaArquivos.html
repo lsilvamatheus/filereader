@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="LayoutPadrao">
+
+
+<head>
+<title>Lista de Arquivos</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/table_style.css" />
+
+</head>
+<section layout:fragment="conteudo">
+
+	<div class="alert alert-success" th:if="${!#strings.isEmpty(mensagem)}">
+		<span th:text="${mensagem}"></span>
+	</div>
+	<div class="alert alert-danger"  th:if="${!#strings.isEmpty(mensagemErro)}">
+		<span th:text="${mensagemErro}"></span>
+	</div>
+	<div style="margin-left: 15px;">
+		<h3>Lista de Arquivos não Processados</h3>
+	</div>
+	<div class="panel panel-default">
+
+		<div class="table-responsive">
+			<table class="table table-striped header-fixed">
+				<thead>
+					<tr>
+						<th class="text-center">Número Arquivo</th>
+						<th class="text-center">Nome</th>
+						<th class="text-center">Tamanho (bytes)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="file : ${files}">
+						<td class="text-center" th:text="${file.numero}"></td>
+						<td class="text-center" th:text="${file.name}"></td>
+						<td class="text-center" th:text="${file.size}"></td>
+					</tr>
+					<tr>
+						<td colspan="6" th:if="${#lists.isEmpty(files)}">Nenhum
+							Arquivo encontrado</td>
+					</tr>
+				</tbody>
+
+			</table>
+		</div>
+	</div>
+</section>
+</html>

@@ -1,0 +1,49 @@
+/* Tela Grande */
+@media(min-width: 768px){
+	.panel-default{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+.alert{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+
+
+.navbar-brand{
+	padding-top: 10px;
+}
+
+.nav-pills{
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+
+}
+
+.nav-tabs{
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.text-li{
+	background-color: menu;
+	font-weight: 550;
+	border-radius: 5px;
+	}
+
+.custom-panelTitulo{
+	float: left;
+	padding-top: 2px;
+}
+
+.custom-panelLink{
+	float: right;
+	padding: 0px; 
+}
+
